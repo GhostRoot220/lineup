@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1025568450201",
+    "firebase_url": "https://lineup-2300.firebaseio.com",
+    "project_id": "lineup-2300",
+    "storage_bucket": "lineup-2300.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025568450201:android:f51322e167024616",
+        "android_client_info": {
+          "package_name": "com.orphanboard.lineup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025568450201-al7t9q93uci8e82f1es09pbje99nf3p2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_6YPMEWLPz4P-2L6MIZAmxUEbHaibtUc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025568450201-al7t9q93uci8e82f1es09pbje99nf3p2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,52 @@
+ion-content {
+    --ion-background-color: #BCD9E6;
+}
+
+#login-header {
+    margin: 10vh 0 5vh 0;
+    width: 100%;
+    text-align: center;
+}
+
+#login-header > p {
+    color: #00B4F9;
+    font-family: "Open Sans Bold";
+    font-size: 14pt;
+}
+
+#btn-login-normal, #btn-login-google {
+    margin-top: 3vh;
+}
+
+#login_devider {
+    border-bottom: 1px solid #a1b8c4;
+    margin: 5vh 0;
+}
+
+.btn-center {
+    text-align: center;
+}
+
+#login-page-footer {
+    display: flex;
+    margin-top: 4vh;
+    div {
+        flex: 1;
+    }
+}
+
+#login-page-footer > div:first-child {
+    text-align: left;
+    div {
+        color: #86A3B3;
+        font-weight: bold;
+    }
+}
+
+#login-page-footer > div:nth-child(2) {
+    text-align: right;
+    div {
+        color: #86A3B3;
+        font-weight: bold;
+    }
+}

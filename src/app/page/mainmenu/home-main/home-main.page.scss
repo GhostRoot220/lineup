@@ -1,0 +1,159 @@
+ion-content, ion-header {
+    --ion-background-color: #BCD9E6;
+}
+
+ion-toolbar {
+    --background: #BCD9E6;
+}
+
+ion-title {
+    text-align: center;
+}
+
+ion-title > span {
+    color: #00B4F9;
+    font-family: "Open Sans Bold";
+}
+
+#home-maintab-fav-beaches-body {
+    padding: 0 16px;
+}
+
+#home-maintab-header {
+    p {
+        font-size: 14pt;
+        font-weight: bold;
+        color: #426675;
+    }
+}
+
+.home-main-tab-weather-reports {
+    background-color: #F5F5F5;
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px #a4a4a4;
+}
+
+.home-main-tab-weather-reports-location {
+    padding: 10px 0 10px 5px;
+    background-color: #dadada;
+    span {
+        color: #2b2b2b;
+    }
+}
+
+.home-main-tab-weather-reports-body {
+    padding: 10px;
+}
+
+.home-main-tab-weather-reports-reporttxt {
+    color: #626262;
+    font-size: 12pt;
+    margin: 5px 0;
+    font-style: italic;
+}
+
+.home-main-tab-weather-reports-weatherinfo {
+    display: flex;
+    div {
+        flex: 1;
+    }
+}
+
+.home-main-tab-weather-reports-waveheight {
+    text-align: left;
+    color: #626262;
+    margin: 5px 0;
+}
+
+.home-main-tab-weather-reports-wavequality {
+    text-align: right;
+    color: #626262;
+    margin: 5px 0;
+}
+
+.home-main-tab-weather-reports-reporttime {
+    flex: 1;
+    text-align: right;
+    p {
+        font-size: 10pt;
+        color: #2e556e;
+        margin: 5px 0;
+    }
+}
+
+#home-maintab-shop-reports-header, #home-maintab-fav-beachhes-header, #home-maintab-discussions-header {
+    p {
+        font-size: 14pt;
+        font-weight: bold;
+        color: #426675;
+    }
+}
+
+#home-maintab-shop-reports-img-container {
+    overflow-x: scroll;
+    ion-col {
+        padding: 0;
+    }
+}
+
+.home-maintab-shop-reports-itemimg {
+    width: 100%;
+    height: 22vw;
+    overflow: hidden;
+    position: relative;
+    img {
+        width: 100%;
+        min-height: 100%;
+    }
+}
+
+.home-maintab-shop-reports-itemimg-description {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    p {
+        color: white;
+        text-align: center;
+        font-weight: bold;
+        font-size: 9pt;
+    }
+}
+
+.home-maintab-discussion-item {
+    background-color: #F5F5F5;
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px #a4a4a4;
+}
+
+.home-maintab-discussion-item-header {
+    padding: 10px 0 10px 5px;
+    background-color: #dadada;
+    span {
+        color: #2b2b2b;
+    }
+}
+
+.home-maintab-discussion-item-body, .home-maintab-discussion-item-footer {
+    padding: 8px;
+    p {
+        margin: 5px 0;
+    }
+}
+
+.home-maintab-discussion-item-body {
+    p {
+        color: #565656;
+        font-style: italic;
+    }
+}
+
+.home-maintab-discussion-item-footer {
+    p {
+        text-align: right;
+        font-size: 10pt;
+        color: #2e556e;
+    }
+}

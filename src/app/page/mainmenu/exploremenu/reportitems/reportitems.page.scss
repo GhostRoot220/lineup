@@ -1,0 +1,83 @@
+ion-header {
+    ion-toolbar {
+        position: relative;
+        --background: #84A1B3;
+        ion-icon {
+            font-size: 16pt;
+            margin-left: 16px;
+        }
+        ion-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #CAE9F7;
+        }
+    }
+}
+
+.home-location-detail-reports-item {
+    margin-bottom: 2vh;
+    box-shadow: 0 0 5px #cbcbcb;
+}
+
+.home-location-detail-reports-header {
+    display: flex;
+    padding: 0 5px;
+    background-color: #7dc7ff;
+    div {
+        flex: 1;
+        p {
+            margin: 5px;
+        }
+    }
+}
+
+.home-location-detail-reports-content {
+    padding: 10px;
+    display: flex;
+}
+
+.home-location-detail-reports-img {
+    flex: 1;
+}
+
+.home-location-detail-reports-txt {
+    flex: 4;
+    padding: 10px;
+    p {
+        color: #5e5e5e;
+        margin: 5px 0;
+    }
+}
+
+.home-location-detail-reports-img {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    text-align: center;
+    img {
+        width: 100%;
+        min-height: 100%;
+    }
+}
+
+.home-location-detail-reports-footer {
+    display: flex;
+    padding: 0 5px;
+    div {
+        p {
+            font-size: 11pt;
+            margin: 10px;
+            color: #2f7bab;
+        }
+    }
+}
+
+.home-location-detail-reports-footer > div:first-child {
+    flex: 2;
+}
+
+.home-location-detail-reports-footer > div:nth-child(2) {
+    flex: 3.5;
+}

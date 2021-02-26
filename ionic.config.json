@@ -1,0 +1,8 @@
+{
+  "name": "Lineup",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "com.orphanboard.lineup"
+}

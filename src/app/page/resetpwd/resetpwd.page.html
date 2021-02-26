@@ -1,0 +1,26 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="resetpwd-header">
+    <p>LINEUP</p>
+  </div>
+
+  <div id="resetpwd-subheader">
+    <p>Reset Password</p>
+  </div>
+
+  <ion-item>
+    <ion-icon name="person" item-start></ion-icon>
+    <ion-input type="email" placeholder="email address" [(ngModel)]="resetEmail"></ion-input>
+  </ion-item>
+
+  <div class="btn-resetpwd">
+    <ion-button color="primary" expand="full" (click)="resetPassword()">Reset Password</ion-button>
+  </div>
+</ion-content>

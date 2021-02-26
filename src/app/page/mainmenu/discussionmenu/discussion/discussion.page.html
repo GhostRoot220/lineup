@@ -1,0 +1,23 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchKeyword" (ionChange)="searchDiscussion()"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <div id="discussion-item-container">
+    <div class="discussion-item" *ngFor="let result of arrResult" (click)="onClickDiscussion(result.discussionid, result.discussionname)">
+      <div class="discussion-item-name">
+        <p>{{result.discussionname}}</p>
+      </div>
+      <img class="discussion-item-detail" src="assets/imgs/icon/icon-left-arrow.svg" />
+    </div>
+  </div>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="addDiscussion()">
+      Add Discussion
+      <ion-icon slot="end" name="add"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

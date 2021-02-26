@@ -1,0 +1,29 @@
+#discussion-item-container {
+    margin-top: 3vh;
+}
+
+.discussion-item {
+    position: relative;
+    padding: 5px 10px;
+    border-bottom: 1px solid #000;
+}
+
+.discussion-item-name p {
+    color: #658696;
+    font-weight: bold;
+}
+
+.discussion-item-detail {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 14px;
+}
+
+
+ion-footer {
+    ion-toolbar {
+        text-align: center;
+    }
+}

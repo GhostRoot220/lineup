@@ -1,0 +1,54 @@
+ion-header {
+    --ion-background-color: #84A1B3;
+}
+
+ion-toolbar {
+    position: relative;
+    --background: #84A1B3;
+    p {
+        color: #CAE9F7;
+        font-family: "Open Sans Bold";
+        padding-right: 5px;
+    }
+}
+
+ion-title {
+    color: #CAE9F7;
+    font-family: "Open Sans Bold";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#account-profileimg-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    overflow: hidden;
+    margin: auto;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+#account-btn-changepwd {
+    margin-bottom: 3vh;
+}
+
+.account-report {
+    text-align: center;
+    p {
+        text-decoration: underline;
+        color: #427291;
+        font-weight: bold;
+    }
+}
+
+#account-btn-logout {
+    text-align: center;
+}

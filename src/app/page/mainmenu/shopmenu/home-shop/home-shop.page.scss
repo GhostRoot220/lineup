@@ -1,0 +1,53 @@
+
+#shop-search-bar {
+    display: flex;
+    align-items: center;
+    padding: 16px 10px;
+    background-color: #84A1B3;
+}
+
+ion-segment-button {
+    font-size: 12px;
+    flex: 1;
+}
+
+#home-shop-itemcontainer {
+    padding: 10px;
+    ion-col {
+        padding: 0 !important;
+    }
+}
+
+.home-shop-item {
+    height: 28vw;
+    overflow: hidden;
+    position: relative;
+    img {
+        width: 100%;
+        min-height: 100%;
+    }
+}
+
+.home-shop-item-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.4);
+    p {
+        color: white;
+        font-family: "Open Sans Bold";
+    }
+}
+
+ion-footer {
+    ion-toolbar {
+        text-align: center;
+    }
+}
+
+#home-shop-btn-myitem {
+    margin-left: 5vw;
+}

@@ -1,0 +1,77 @@
+ion-header {
+    --ion-background-color: #84A1B3;
+}
+
+ion-toolbar {
+    --background: #84A1B3;
+    position: relative;
+}
+
+ion-title {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ion-segment-button {
+    font-size: 12px;
+    flex: 1;
+}
+
+#home-activity-contact-container, #home-activity-favcontact-container {
+    padding: 16px;
+}
+
+.home-activity-contact-item {
+    display: flex;
+    margin-bottom: 2vh;
+    padding: 10px;
+    box-shadow: 0 0 8px #eaeaea;
+}
+
+.home-activity-contact-img {
+    display: flex;
+    align-items: center;
+}
+
+.home-activity-contact-boardimg {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.home-activity-contact-main {
+    flex: 6;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+    p {
+        margin: 5px 0;
+    }
+}
+
+.home-activity-contact-main > div > p:first-child {
+    color: #5a5a5a;
+    font-size: 12pt;
+}
+
+.home-activity-contact-main > div > p:nth-child(2) {
+    color: #5a5a5a;
+    font-style: italic;
+    font-size: 10pt;
+}
+
+.home-activity-contact-main > div > p:nth-child(3) {
+    font-size: 10pt;
+    color: #3594d0;
+    text-decoration: underline;
+}

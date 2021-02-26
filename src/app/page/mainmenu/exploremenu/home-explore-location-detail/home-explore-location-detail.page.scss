@@ -1,0 +1,312 @@
+ion-header {
+    --ion-background-color: #84A1B3;
+}
+
+ion-toolbar {
+    --background: #84A1B3;
+    position: relative;
+    ion-icon {
+        font-size: 20pt;
+    }
+}
+
+ion-title {
+    text-align: center;
+    color: #CAE9F7;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#data-grid ion-col {
+    border: 1px solid gray;
+    border-top: none;
+    border-left: none;
+    text-align: center;
+    font-size: 8pt;
+    vertical-align: middle;
+}
+
+#data-grid ion-row:first-child {
+    border-top: 1px solid gray;
+}
+
+#data-grid ion-row ion-col:first-child {
+    border-left: 1px solid gray;
+}
+
+ion-row.row-date ion-col {
+    font-size: 12pt !important;
+    background-color: #A0C5E8 !important;
+}
+
+ion-row.row-title ion-col {
+    font-size: 11pt !important;
+    background-color: #0058B0;
+    color: white;
+}
+
+// <-- Weather
+
+#home-explore-location-btnpost {
+    margin: 1vh 0;
+    text-align: center;
+}
+
+#report-main-nodata {
+    text-align: center;
+    p {
+        font-size: .7em;
+        margin: 0;
+    }
+}
+
+.home-location-detail-reports-item {
+    margin-bottom: 2vh;
+    box-shadow: 0 0 5px #cbcbcb;
+}
+
+.home-location-detail-reports-header {
+    display: flex;
+    padding: 0 5px;
+    background-color: #7dc7ff;
+    div {
+        flex: 1;
+        p {
+            margin: 5px;
+        }
+    }
+}
+
+.home-location-detail-reports-content {
+    padding: 10px;
+    display: flex;
+}
+
+.home-location-detail-reports-txt {
+    flex: 4;
+    padding: 10px;
+    p {
+        color: #5e5e5e;
+        margin: 5px 0;
+    }
+}
+
+.home-location-detail-reports-img {
+    flex: 1;
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    text-align: center;
+    img {
+        width: 100%;
+        min-height: 100%;
+    }
+}
+
+.home-location-detail-reports-footer {
+    display: flex;
+    padding: 0 5px;
+    div {
+        text-align: right;
+        width: 100%;
+        p {
+            font-size: 11pt;
+            margin: 10px;
+            color: #2f7bab;
+        }
+    }
+}
+
+.home-location-detail-reports-btnmoreitem {
+    p {
+        text-align: center;
+        color: #6d6d6d;
+        font-size: 11pt;
+    }
+}
+
+#windchart {
+    padding: 0;
+    border-right: 1px solid #909090;
+    border-bottom: 1px solid #909090;
+    ion-col {
+        padding: 0;
+        p {
+            font-size: .7em;
+        }
+    }
+}
+
+#windchart-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #0058B0;
+    div {
+        writing-mode: tb-rl;
+        transform: rotate(180deg);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        p {
+            // margin: 5px;
+            padding: 16px 0;
+            color: white;
+            font-size: 14px;
+        }
+    }
+}
+
+#windchart-main > ion-row:first-child {
+    background-color: rgba(0, 88, 176, 0.2);
+}
+
+#windchart-date {
+    background-color: #0058B0;
+    ion-col p {
+        margin: 10px 0;
+        text-align: center;
+    }
+}
+
+.windchart-date-cell {
+    border-right: 1px solid #909090;
+    border-bottom: 1px solid #909090;
+    div {
+        p {
+            margin: 10px 0;
+            text-align: center;
+            color: #484848;
+        }
+    }
+}
+
+.windchart-date-cell:last-child {
+    border-right: none !important;
+}
+
+#windchart-date > ion-col:nth-child(2) {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+}
+
+#windChart-value {
+    ion-col {
+        div {
+            text-align: center;
+            max-height: 20px;
+            margin-top: 8px;
+        }
+        p {
+            text-align: center;
+        }
+    }
+}
+
+#windChart-value ion-col:last-child {
+    border-right: none !important;
+}
+
+.windchart-col-novalue {
+    height: 60px;
+    div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#home-locationdetail-report-container {
+    display: flex;
+}
+
+#home-locationdetail-report-header {
+    flex: 1;
+    border-bottom: 1px solid #4070a0;
+    background-color: #0058B0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    p {
+        margin: 0;
+        writing-mode: tb-rl;
+        transform: rotate(180deg);
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        white-space: nowrap;
+        padding: 8px 0;
+    }
+}
+
+#home-locationdetail-report-main {
+    flex: 11;
+}
+
+.home-location-detail-tidehighlow-item {
+    display: flex;
+    p {
+        margin: 5px 0;
+        text-transform: capitalize;
+        font-size: .7em;
+        color: #818181;
+    }
+}
+
+.home-location-detail-tidehighlow-item > div:first-child {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-location-detail-tidehighlow-item > div:nth-child(2) {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-location-detail-tidehighlow-item > div:nth-child(3) {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home-locationdetail-tidechart {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+#home-locationdetail-tidechart-header {
+    flex: 1;
+    border-bottom: 1px solid #4070a0;
+    background-color: #0058B0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 8.3vw;
+    p {
+        margin: 0;
+        writing-mode: tb-rl;
+        transform: rotate(180deg);
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        white-space: nowrap;
+        padding: 8px 0;
+    }
+}
+
+#home-locationdetail-tidechart-main {
+    flex: 11;
+    display: inline-grid;
+    border-top: 1px solid #909090;
+}

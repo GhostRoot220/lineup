@@ -1,0 +1,31 @@
+<ion-content padding>
+
+  <div id="login-header">
+    <p>LINEUP</p>
+  </div>
+
+  <ion-item id="login_usr_email">
+      <ion-icon name="person" item-start></ion-icon>
+      <ion-input type="email" placeholder="email address" [(ngModel)]="usr_email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-icon name="lock" item-start></ion-icon>
+      <ion-input type="password" placeholder="password" [(ngModel)]="usr_pwd"></ion-input>
+  </ion-item>
+
+  <div class="btn-center" id="btn-login-normal">
+    <ion-button color="primary" (click)="login()">Sign In</ion-button>
+  </div>
+
+  <div id="login_devider"></div>
+
+  <div id="login-page-footer">
+    <div>
+      <div (click)="viewResetPwdPage()">Forgot Password?</div>
+    </div>
+    <div>
+      <div (click)="viewRegisterPage()">Register</div>
+    </div>
+  </div>
+</ion-content>

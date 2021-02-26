@@ -1,0 +1,35 @@
+ion-header {
+    --ion-background-color: #84A1B3;
+    ion-toolbar {
+        --background: #84A1B3;
+        ion-icon {
+            font-size: 16pt;
+            margin-left: 16px;
+        }
+        ion-title {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #CAE9F7;
+        }
+    }
+}
+
+#activity-detail-board-imgs {
+    text-align: center;
+}
+
+#activity-detail-board-img-container {
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    margin: 2vh 0 3vh 0;
+    img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 100px;
+    }
+}

@@ -1,0 +1,55 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="navback"></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-icon color="navback" name="arrow-back" (click)="onClickBackBtn()"></ion-icon> -->
+    <ion-title>{{itemTitle}}</ion-title>
+    <ion-icon slot="end" [color]="isFavoriteProd?'activestar':'light'" name="star" (click)="onToggleFavoriteBtn()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-slides pager="true" [options]="slideOptions">
+    <ion-slide *ngFor="let img of selectedItem.imgs">
+      <img [src]="img" (click)="onClickItemImage()"/>
+    </ion-slide>
+  </ion-slides>
+
+  <div id="home-shop-item-owner-header">
+    <p>Owner</p>
+  </div>
+
+  <div id="home-shop-item-owner-info">
+    <img src="assets/imgs/img-person.svg" />
+    <span>{{selectedItem.ownername | formatname}}</span>
+  </div>
+
+  <ion-item-divider>
+      <ion-label>
+        Board Info
+      </ion-label>
+    </ion-item-divider>
+
+  <ion-item>
+    <ion-label position="stacked">Description</ion-label>
+    <ion-input type="text" [(ngModel)]="selectedItem.description" [disabled]="!isCurrentUser"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Price($)</ion-label>
+    <ion-input type="number" [(ngModel)]="selectedItem.price" [disabled]="!isCurrentUser"></ion-input>
+  </ion-item>
+
+  <div id="home-shop-item-btnsendmessage" *ngIf="!isCurrentUser">
+    <ion-button color="primary" (click)="sendMessageToOwner()">Send Message</ion-button>
+  </div>
+  <div id="home-shop-item-btncontainer" *ngIf="isCurrentUser">
+    <div>
+      <ion-button color="primary" (click)="onClickSaveBtn()">Save</ion-button>
+    </div>
+    <div>
+      <ion-button color="primary" (click)="onClickItemDelete()">Delete Item</ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="register-header">
+    <p>LINEUP</p>
+  </div>
+
+  <div id="register-subheader">
+    <p>Create new account</p>
+  </div>
+
+  <ion-item>
+    <ion-input type="text" placeholder="First Name" [(ngModel)]="newFname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Last Name" [(ngModel)]="newLname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="email" placeholder="Email Address" [(ngModel)]="newEmail"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [type]="inputNewpwdType" placeholder="Password" [(ngModel)]="newPwd"></ion-input>
+    <ion-icon name="eye" item-end (click)="onClickEyeIcon(0)"></ion-icon>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [type]="inputRepeatpwdType" placeholder="Repeat Password" [(ngModel)]="newRepeatPwd"></ion-input>
+    <ion-icon name="eye" item-end (click)="onClickEyeIcon(1)"></ion-icon>
+  </ion-item>
+
+  <div class="btn-register">
+    <ion-button color="primary" expand="full" (click)="createNewAccount()">Create account</ion-button>
+  </div>
+</ion-content>

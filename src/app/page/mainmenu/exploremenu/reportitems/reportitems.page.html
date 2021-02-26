@@ -1,0 +1,33 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="navback"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{locationTitle}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="home-location-detail-reports-item" *ngFor="let report of arrReports">
+    <div class="home-location-detail-reports"></div>
+    <div class="home-location-detail-reports-content">
+      <div class="home-location-detail-reports-img">
+        <img *ngIf="report.postfile.data!=''" [src]="report.postfile.data" (click)="viewReportImage(report.postfile.data)"/>
+        <img *ngIf="report.postfile.data==''" src="assets/imgs/app_icon.png" (click)="viewReportImage('assets/imgs/app_icon.png')"/>
+      </div>
+      <div class="home-location-detail-reports-txt">
+        <p>{{report.reporttxt}}</p>
+      </div>
+    </div>
+    <div class="home-location-detail-reports-footer">
+      <div>
+        <p>{{report.username | formatname}}</p>
+      </div>
+      <div>
+        <p>
+          {{report.createdat | millitotime: true}}
+        </p>
+      </div>
+    </div>
+  </div>
+</ion-content>

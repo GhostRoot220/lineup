@@ -1,0 +1,211 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button color="navback"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{locationName}}</ion-title>
+        <ion-icon slot="end" [color]="isFavoritePage?'activestar':'light'" name="star"
+                  (click)="onToggleFavoriteBtn()"></ion-icon>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+    <ion-grid no-padding id="data-grid" *ngIf="arrDates.length > 0">
+        <ion-row class="row-date">
+            <ion-col size="4" *ngFor="let date of arrDates">{{date}}</ion-col>
+        </ion-row>
+        <ion-row class="row-title">
+            <ion-col>Wave Height and Condition</ion-col>
+        </ion-row>
+        <ion-row *ngIf="arrDates.length > 0">
+            <ion-col size="2" *ngFor="let i of [0,1,2,3,4,5]">{{i % 2 == 0 ? 'Morning' : 'Afternoon'}}</ion-col>
+        </ion-row>
+        <ng-container *ngIf="waveResults.length > 0; else nowaveData">
+            <ion-row>
+                <ion-col size="2" *ngFor="let waveData of waveResults">
+                    {{waveData.value}}ft
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="2" *ngFor="let waveData of waveResults">
+                    {{arrWaveQualities[waveData.quality]}}
+                </ion-col>
+            </ion-row>
+        </ng-container>
+        <ng-template #nowaveData>
+            <ion-row *ngIf="arrDates.length > 0">
+                <ion-col> There is nothing to show</ion-col>
+            </ion-row>
+        </ng-template>
+        <ion-row class="row-title">
+            <ion-col>Wind(m/s)</ion-col>
+        </ion-row>
+        <ion-row *ngIf="arrDates.length > 0">
+            <ion-col size="1.333" *ngFor="let i of [0,1,2,3,4,5,6,7,8]">
+                {{i % 3 == 0 ? '6am' : i % 3 == 1 ? '12pm' : '6pm'}}
+            </ion-col>
+        </ion-row>
+        <ng-container *ngIf="windResults.length > 0; else nowindData">
+            <ion-row>
+                <ion-col size="1.333" *ngFor="let windData of windResults"><img
+                        [src]="'assets/imgs/wind/img-wind-' + windData.direction + '.svg'"></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="1.333" *ngFor="let windData of windResults">{{windData.value}}</ion-col>
+            </ion-row>
+        </ng-container>
+        <ng-template #nowindData>
+            <ion-row>
+                <ion-col *ngIf="arrDates.length > 0"> There is nothing to show</ion-col>
+            </ion-row>
+        </ng-template>
+        <ion-row class="row-title">
+            <ion-col>Swell</ion-col>
+        </ion-row>
+        <ng-container *ngIf="waveResults.length > 0; else noswellData">
+            <ion-row>
+                <ion-col size="2" *ngFor="let windData of waveResults"><img
+                        [src]="'assets/imgs/wind/img-wind-' + windData.waveDirectionImg + '.svg'"/></ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="2" *ngFor="let windData of waveResults">{{windData.swellHeight}}ft</ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="2" *ngFor="let windData of waveResults">{{windData.swellInterval}}sec</ion-col>
+            </ion-row>
+        </ng-container>
+        <ng-template #noswellData>
+            <ion-row>
+                <ion-col *ngIf="arrDates.length > 0"> There is nothing to show</ion-col>
+            </ion-row>
+        </ng-template>
+        <ion-row class="row-title">
+            <ion-col>Reports</ion-col>
+        </ion-row>
+        <ion-list padding>
+            <ng-container *ngIf="reportsData.length > 0; else noReportData">
+                <div class="home-location-detail-reports-item" *ngFor="let report of reportsData">
+                    <div class="home-location-detail-reports"></div>
+                    <div class="home-location-detail-reports-content">
+                        <div *ngIf="report.postfile&&report.postfile.data!=''"
+                             class="home-location-detail-reports-img">
+                            <img *ngIf="report.postfile.type==0" [src]="report.postfile.data"
+                                 (click)="onClickVideoAttachment(report.postfile.data, report.postfile.type)"/>
+                            <img *ngIf="report.postfile.type==1" src="assets/imgs/icon/icon-video.svg"
+                                 (click)="onClickVideoAttachment(report.postfile.data, report.postfile.type)"/>
+                        </div>
+                        <div *ngIf="report.postfile&&report.postfile.data==''"
+                             class="home-location-detail-reports-img">
+                            <img src="assets/imgs/app_icon.png"
+                                 (click)="onClickVideoAttachment('assets/imgs/app_icon.png', report.postfile.type)"/>
+                        </div>
+                        <div class="home-location-detail-reports-txt">
+                            <p>{{report.reporttxt}}</p>
+                        </div>
+                    </div>
+                    <div class="home-location-detail-reports-footer">
+                        <div>
+                            <p>
+                                {{report.username | formatname}}&nbsp;{{report.createdat | millitotime: true}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-location-detail-reports-btnmoreitem">
+                    <p (click)="onClickMoreReports()">
+                        More...
+                    </p>
+                </div>
+            </ng-container>
+            <ng-template #noReportData>
+                <ion-row style="border: none !important;">
+                    <ion-col style="border: none !important;" *ngIf="arrDates.length > 0"> There is nothing to show
+                    </ion-col>
+                </ion-row>
+            </ng-template>
+        </ion-list>
+        <div id="home-explore-location-btnpost">
+            <ion-button (click)="viewPostReportPage()">Post Report</ion-button>
+        </div>
+        <ion-row class="row-title">
+            <ion-col>Weather</ion-col>
+        </ion-row>
+        <ng-container *ngIf="weatherResults.length > 0; else noweatherData">
+            <ion-row>
+                <ion-col size="4" *ngFor="let weather of weatherResults">
+                    <img [src]="weather.weatherIcon"/>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="4" *ngFor="let weather of weatherResults">
+                    {{weather.mintmpF}}F({{weather.mintmpC}}C)° - {{weather.maxtmpF}}F({{weather.maxtmpC}}C)°
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="4" *ngFor="let weather of weatherResults">
+                    Water: {{weather.waterTempF}}F({{weather.waterTempC}}C)°
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="4" *ngFor="let weather of weatherResults">
+                    Sunrise: {{weather.sunrise}}
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="4" *ngFor="let weather of weatherResults">
+                    Sunset: {{weather.sunset}}
+                </ion-col>
+            </ion-row>
+        </ng-container>
+        <ng-template #noweatherData>
+            <ion-row>
+                <ion-col *ngIf="arrDates.length > 0"> There is nothing to show</ion-col>
+            </ion-row>
+        </ng-template>
+        <ion-row class="row-title">
+            <ion-col>Tide</ion-col>
+        </ion-row>
+        <ion-row>
+            <fusioncharts
+                    [width]="width"
+                    [height]="height"
+                    [type]="type"
+                    [dataFormat]="dataFormat"
+                    [dataSource]="dataSource"
+            >
+            </fusioncharts>
+        </ion-row>
+        <ng-container *ngIf="tideResults.length > 0; else noExtremes">
+            <ion-grid>
+                <ion-row no-wrap>
+                    <ion-col size="6" style="border: none !important; font-size: 10pt !important;" *ngFor="let tideData of tideResults">
+                        <div class="home-location-detail-tidehighlow-item">
+                            <div>
+                                <p>
+                                    {{tideData.tide_type}}
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    {{tideData.tideTime}}
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    {{tideData.tideHeight_mt}}m
+                                </p>
+                            </div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ng-container>
+        <ng-template #noExtremes>
+            <div>
+                <p>
+                    There is nothing to show
+                </p>
+            </div>
+        </ng-template>
+    </ion-grid>
+</ion-content>

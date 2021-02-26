@@ -1,0 +1,30 @@
+  <ion-tabs>
+    <!-- Tab bar -->
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="main">
+        <ion-icon name="home"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="explore">
+        <ion-icon name="map"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="activity">
+        <ion-icon name="chatbubbles"></ion-icon>
+        <ion-badge color="danger" *ngIf="numNoti>0">{{numNoti}}</ion-badge>
+      </ion-tab-button>
+
+      <ion-tab-button tab="shop">
+        <ion-icon name="cart"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button tab="discussion">
+        <ion-icon name="text"></ion-icon>
+      </ion-tab-button>
+
+      <ion-tab-button (click)="showPopOver()">
+        <ion-icon name="more"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+

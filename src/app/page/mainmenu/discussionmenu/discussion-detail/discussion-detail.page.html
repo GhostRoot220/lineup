@@ -1,0 +1,38 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="navback"></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-icon slot="start" color="navback" name="arrow-back" (click)="onClickBackBtn()"></ion-icon> -->
+    <ion-title>{{discussionTitle}}</ion-title>
+    <ion-icon slot="end" [color]="isFavDiscussion?'activestar':'light'" name="star" (click)="onToggleFavoriteBtn()"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="discussion-detail-eventname">
+    <p>{{discussionTitle}}</p>
+  </div>
+
+  <div id="discussion-detail-container">
+    <div class="discussion-detail-item" *ngFor="let item of detailItems">
+      <div class="discussion-detail-body">
+        <p class="discussion-detail-item-content">
+          {{item.content}}
+        </p>
+        <p class="discussion-detail-item-time">
+          {{item.postername | formatname}}.&nbsp;&nbsp;&nbsp;{{item.createdat | millitotime: true}}
+        </p>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="discussionCommentTxt" placeholder="Your Message here"></ion-input>
+      <ion-icon slot="end" name="mail" (click)="postDiscussionComment()"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

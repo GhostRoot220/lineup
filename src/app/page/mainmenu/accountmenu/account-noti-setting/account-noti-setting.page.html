@@ -1,0 +1,91 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="navback"></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-icon slot="start" name="arrow-back" color="navback" (click)="onClickNavBack()"></ion-icon> -->
+    <ion-title>Notification Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Favorite Breaks Notification</ion-label>
+    <ion-toggle [(ngModel)]="notiSettings.break"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Product Notification</ion-label>
+    <ion-toggle [(ngModel)]="notiSettings.product"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Favorite Message Board Notification</ion-label>
+    <ion-toggle [(ngModel)]="notiSettings.message"></ion-toggle>
+  </ion-item>
+
+  <ion-item-group>
+    <ion-item-divider>
+      <ion-label color="dark">Radius of items for sale:</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-range min="0" max="200" color="secondary" [(ngModel)]="notiSettings.range" pin=true>
+        <ion-label slot="start">0</ion-label>
+        <ion-label slot="end">200miles</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-item-group>
+<!-- 
+  <ion-grid>
+    <ion-row radio-group align-items-center>
+      <ion-col size="4">
+        <ion-item lines="none">
+          <ion-label>Notification Times</ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="4">
+        <ion-item lines="none">
+          <ion-label>Anytime</ion-label>
+          <ion-radio mode="md" item-left value="A"></ion-radio>
+        </ion-item>
+      </ion-col>
+      <ion-col size="4">
+        <ion-item lines="none">
+          <ion-label>Custom</ion-label>
+          <ion-radio mode="md" item-left value="A"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <ion-item>
+    <ion-label>Notification times</ion-label>
+    <ion-select [(ngModel)]="notiSettings.type">
+      <ion-select-option value="0">Anytime</ion-select-option>
+      <ion-select-option value="1">Custom</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item-group *ngIf="notiSettings.type=='1'">
+    <ion-item>
+      <ion-item>
+        <ion-label>Start</ion-label>
+        <ion-datetime display-format="HH:mm" min="00:00" max="11:59" picker-format="HH/mm"
+          [(ngModel)]="notiSettings.start"></ion-datetime>
+      </ion-item>
+    </ion-item>
+
+    <ion-item>
+      <ion-item>
+        <ion-label>End</ion-label>
+        <ion-datetime display-format="HH:mm" min="12:00" max="23:59" picker-format="HH/mm"
+          [(ngModel)]="notiSettings.end"></ion-datetime>
+      </ion-item>
+    </ion-item>
+  </ion-item-group>
+
+  <div id="noti-setting-btnsave">
+    <ion-button (click)="onClickSaveBtn()">Save</ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="99" height="99" viewBox="0 0 99 99">
+  <g id="Group_2" data-name="Group 2" transform="translate(-131 -182)">
+    <g id="Group_1" data-name="Group 1" transform="translate(0 119)">
+      <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(131 63)" fill="#fff" stroke="#707070" stroke-width="2">
+        <circle cx="49.5" cy="49.5" r="49.5" stroke="none"/>
+        <circle cx="49.5" cy="49.5" r="48.5" fill="none"/>
+      </g>
+      <text id="Photo" transform="translate(164 117)" fill="#707070" font-size="12" font-family="HelveticaNeue, Helvetica Neue"><tspan x="0" y="0">Photo</tspan></text>
+    </g>
+  </g>
+</svg>

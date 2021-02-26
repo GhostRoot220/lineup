@@ -1,0 +1,39 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="navback"></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-icon color="navback" slot="start" name="arrow-back" (click)="onClickBackBtn()"></ion-icon> -->
+    <ion-title>{{boardInfo?.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="activity-detail-board-imgs">
+    <ng-container *ngIf="boardInfo?.imgs.length > 0; else noBoardImage">
+      <div id="activity-detail-board-img-container">
+        <img [src]="boardInfo?.imgs[0]" />
+      </div>
+    </ng-container>
+    <ng-template #noBoardImage>
+      <p>
+        No Image
+      </p>
+    </ng-template>
+  </div>
+
+  <div id="activity-detail-message-container">
+    <ng-container *ngFor="let message of detailMessages">
+      <messagebox [message]="message" [currentUser]="currentUserInfo.uid" [isDisableProfileClick]="true"></messagebox>
+    </ng-container>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="messageTxt" placeholder="Your Message"></ion-input>
+      <ion-icon slot="end" name="mail" (click)="sendMessage()"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

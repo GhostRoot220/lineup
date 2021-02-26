@@ -1,0 +1,12 @@
+<ion-content fullscreen padding>
+  <div id="gallery-modal-btnclose">
+    <ion-icon name="close" (click)="closeGalleryModal()"></ion-icon>
+  </div>
+  <ion-slides [options]="sliderOpts">
+    <ion-slide *ngFor="let img of imgs">
+      <div class="swiper-zoom-container">
+        <img [src]="img" />
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,27 @@
+ion-content, ion-header {
+    --ion-background-color: #BCD9E6;
+}
+
+#resetpwd-header {
+    text-align: center;
+    margin: 6vh 0;
+}
+
+#resetpwd-header > p {
+    color: #00B4F9;
+    font-family: "Open Sans Bold";
+    font-size: 14pt;
+}
+
+#resetpwd-subheader {
+    text-align: center;
+    margin-bottom: 6vh;
+    p {
+        color: #84A1B3;
+        font-weight: bold;
+    }
+}
+
+.btn-resetpwd {
+    margin-top: 3vh;
+}

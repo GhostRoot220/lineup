@@ -1,0 +1,96 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title><span>LINEUP</span></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div id="home-maintab-header">
+    <p>Latest Reports</p>
+  </div>
+
+  <!-- Weather Reports -->
+  <div id="home-maintab-weather-reports-container">
+    <div class="home-main-tab-weather-reports" *ngFor="let weatherItem of weatherReports; let i = index;" (click)="onClickReportItem(i)">
+      <div class="home-main-tab-weather-reports-location">
+        <span>{{weatherItem.location.name}}</span>
+      </div>
+      <div class="home-main-tab-weather-reports-body">
+        <div class="home-main-tab-weather-reports-weatherinfo">
+          <div>
+            <p class="home-main-tab-weather-reports-waveheight">
+              Height: {{weatherItem.waveHeight | round: true}}ft
+            </p>
+          </div>
+          <div>
+            <p class="home-main-tab-weather-reports-wavequality">
+              Form: {{arrWaveQualities[weatherItem.waveQuality]}}
+            </p>
+          </div>
+        </div>
+        <div>
+          <p class="home-main-tab-weather-reports-reporttxt">
+            &quot;{{weatherItem.reporttxt}}&quot;
+          </p>
+        </div>
+        <div class="home-main-tab-weather-reports-reporttime">
+          <p>
+            {{weatherItem.username | formatname}}.&nbsp;{{weatherItem.createdat | millitotime: true}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shop Reports -->
+  <div id="home-maintab-shop-reports-container">
+    <div id="home-maintab-shop-reports-header">
+      <p>Recent Offers</p>
+    </div>
+    <div id="home-maintab-shop-reports-body" *ngIf="allNewSurfBoards.length">
+      <div class="home-maintab-shop-reports-item">
+        <ion-grid>
+          <ion-row nowrap id="home-maintab-shop-reports-img-container">
+            <ion-col size="3" *ngFor="let boardItem of allNewSurfBoards; let i = index;">
+              <div class="home-maintab-shop-reports-itemimg" (click)="viewItemDetail(i)">
+                <img src="{{boardItem.imgs?boardItem.imgs[0]:'assets/imgs/img-surfboard.svg'}}" />
+                <div class="home-maintab-shop-reports-itemimg-description">
+                  <p>
+                    {{boardItem.title}}
+                  </p>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Discussions -->
+  <div id="home-maintab-discussions-container">
+    <div id="home-maintab-discussions-header">
+      <p>Discussions</p>
+    </div>
+    <div id="home-maintab-discussions-body">
+      <div class="home-maintab-discussion-item" *ngFor="let discussion of arrDiscussions" (click)="onClickDiscussionItem(discussion)">
+        <div class="home-maintab-discussion-item-header">
+          <span>
+            {{discussion.title}}
+          </span>
+        </div>
+        <div class="home-maintab-discussion-item-body">
+          <p>
+            &quot;{{discussion.content}}&quot;
+          </p>
+        </div>
+        <div class="home-maintab-discussion-item-footer">
+          <p>
+            {{discussion.postername | formatname}}.&nbsp;{{discussion.createdat | millitotime: true}}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

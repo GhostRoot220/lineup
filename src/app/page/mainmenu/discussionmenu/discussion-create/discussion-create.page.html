@@ -1,0 +1,13 @@
+<ion-content padding>
+  <div id="discussion-create-modal-btnclose">
+    <ion-icon name="close" (click)="closeDiscussionCreate()"></ion-icon>
+  </div>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Topic" [(ngModel)]="txtTopic"></ion-input>
+  </ion-item>
+
+  <div id="discussion-create-modal-btncreate">
+    <ion-button (click)="createTopic()">Create</ion-button>
+  </div>
+</ion-content>

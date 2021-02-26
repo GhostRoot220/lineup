@@ -1,0 +1,26 @@
+ion-content, ion-header {
+    --ion-background-color: #BCD9E6;
+}
+
+#register-header {
+    text-align: center;
+    margin: 3vh 0 6vh 0;
+}
+
+#register-header > p {
+    color: #00B4F9;
+    font-family: "Open Sans Bold";
+    font-size: 14pt;
+}
+
+#register-subheader {
+    text-align: center;
+    p {
+        color: #84A1B3;
+        font-weight: bold;
+    }
+}
+
+.btn-register {
+    margin-top: 3vh;
+}

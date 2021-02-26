@@ -1,0 +1,30 @@
+<ion-content>
+  <div id="hidelist-btnclose">
+    <ion-icon name="close" (click)="onClickBackBtn()"></ion-icon>
+  </div>
+
+  <ion-list padding>
+    <div id="hidelist-contact-container">
+      <div class="home-activity-contact-item" *ngFor="let contact of arrHideItems; let i = index;">
+        <div class="home-activity-contact-img">
+          <div class="home-activity-contact-boardimg">
+            <img [src]="contact.boardImg" />
+          </div>
+        </div>
+        <div class="home-activity-contact-main">
+          <div>
+            <p>
+              {{contact.boardName}}
+            </p>
+            <p>
+              Item: {{contact.name | formatname}}
+            </p>
+            <p (click)="onClickMessageControlBtn($event, contact.itemid)">
+              UnHide
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title color="navback">Conversations</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="onClickPopOver()">
+        <ion-icon name="more" color="navback"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+  <div id="home-activity-contact-container">
+    <div class="home-activity-contact-item" *ngFor="let contact of contacts; let i = index;" (click)="viewChatRoom(i)">
+      <div class="home-activity-contact-img">
+        <div class="home-activity-contact-boardimg">
+          <img [src]="contact.boardImg" />
+        </div>
+      </div>
+      <div class="home-activity-contact-main">
+        <div>
+          <p>
+            {{contact.boardName}}
+          </p>
+          <p>
+            Item: {{contact.name | formatname}}
+          </p>
+          <p (click)="onClickMessageControlBtn($event, contact.itemid, 0)">
+            Hide Conversation
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

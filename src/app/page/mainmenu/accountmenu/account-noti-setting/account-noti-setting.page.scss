@@ -1,0 +1,42 @@
+ion-header {
+    --ion-background-color: #84A1B3;
+}
+
+ion-toolbar {
+    --background: #84A1B3;
+    position: relative;
+    ion-icon {
+        font-size: 16pt;
+        margin-left: 16px;
+    }
+}
+
+ion-title {
+    color: #CAE9F7;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ion-item {
+    ion-label {
+        font-size: 9pt;
+    }
+}
+
+#noti-setting-btnsave {
+    width: 100%;
+    text-align: center;
+    margin-top: 2vh;
+    ion-button {
+        width: 80%;
+    }
+}
+
+ion-item-group {
+    ion-item {
+        width: 100%;
+    }
+}

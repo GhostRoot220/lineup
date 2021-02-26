@@ -1,0 +1,16 @@
+ion-content {
+    --background: rgba(19, 19, 19, 0.45);
+}
+
+#gallery-modal-btnclose {
+    width: 100%;
+    text-align: right;
+    ion-icon {
+        font-size: 24pt;
+        color: white;
+    }
+}
+
+ion-slides {
+    height: 80%;
+}

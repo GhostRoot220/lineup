@@ -1,0 +1,39 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="navback"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{locationName}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label>Predicted Wave Size</ion-label>
+    <ion-input type="text" disabled value="{{reportWaveSize | round: false}}ft"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Predicted Wave Quality</ion-label>
+    <ion-input type="text" disabled [value]="waveQualities[reportWaveQuality]"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon slot="start" name="camera" (click)="onClickCameraIcon()"></ion-icon>
+    <ion-textarea [(ngModel)]="reportTxt" placeholder="Comment on surf conditions"></ion-textarea>
+  </ion-item>
+
+  <div *ngIf="postFile!=''" class="explore-report-postimg">
+    <ng-container *ngIf="fileType==0; else videoContainer">
+      <img src="{{postFile}}" />
+    </ng-container>
+    <ng-template #videoContainer>
+      <p (click)="onClickPlayVideo()">{{videoFile.name}}</p>
+    </ng-template>
+  </div>
+
+  <div id="explore-report-btnpost">
+    <ion-button (click)="postReport()">Post</ion-button>
+  </div>
+</ion-content>

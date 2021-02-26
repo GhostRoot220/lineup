@@ -1,0 +1,24 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>
+      To:
+    </ion-label>
+    <ion-input [value]="supportEmail" disabled=true></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-textarea [(ngModel)]="reportMessage" rows=5></ion-textarea>
+  </ion-item>
+
+  <ion-item lines="none" id="writemessage-btnsend" class="ion-margin-top">
+    <div>
+      <ion-button (click)="onClickSendBtn()">Send</ion-button>
+    </div>
+  </ion-item>
+</ion-content>

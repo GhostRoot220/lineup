@@ -1,0 +1,36 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="navback"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Configure Alerts</ion-title>
+    <p slot="end" (click)="saveAlertSettings()">Save</p>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Enable Per Location Notifications</ion-label>
+    <ion-toggle></ion-toggle>
+  </ion-item>
+
+  <div class="divider"></div>
+
+  <ion-item>
+    <ion-img slot="start" src="assets/imgs/img-delete.png"></ion-img>
+    <ion-label>Santa Barbara, California</ion-label>
+    <ion-toggle></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-img slot="start" src="assets/imgs/img-delete.png"></ion-img>
+    <ion-label>North Shore, California</ion-label>
+    <ion-toggle></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-img slot="start" src="assets/imgs/img-delete.png"></ion-img>
+    <ion-label>South Shore, California</ion-label>
+    <ion-toggle></ion-toggle>
+  </ion-item>
+</ion-content>

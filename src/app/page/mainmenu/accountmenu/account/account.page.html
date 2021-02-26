@@ -1,0 +1,91 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="navback"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Account Setting</ion-title>
+    <p *ngIf="isCurrentUser" slot="end" (click)="onClickSaveBtn()">Save</p>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="account-profileimg">
+    <div id="account-profileimg-container">
+      <ng-container *ngIf="isCurrentUser; else otherUserImg">
+        <img [src]="userData.profileimg!=''?userData.profileimg:'assets/imgs/icon-profile.svg'" (click)="onClickProfileImg()"/>
+      </ng-container>
+      <ng-template #otherUserImg>
+        <img [src]="userData.profileimg!=''?userData.profileimg:'assets/imgs/img-person.svg'" />
+      </ng-template>
+    </div>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-item>
+          <ion-input type="text" [disabled]="!isCurrentUser" placeholder="First Name" [(ngModel)]="userData.fname"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item>
+          <ion-input type="text" [disabled]="!isCurrentUser" placeholder="Last Name" [(ngModel)]="userData.lname"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="isCurrentUser">
+      <ion-col>
+        <ion-item>
+          <ion-input type="email" placeholder="Email Address" [(ngModel)]="userEmail"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ng-container *ngIf="isCurrentUser==true; else otheruser">
+    <div id="account-btn-changepwd">
+      <ion-button expand="full" (click)="onClickChangePwd()">Change Password</ion-button>
+    </div>
+  
+    <div class="divider"></div>
+  
+    <div>
+      <ion-button expand="full" (click)="onClickNotiSettingBtn()">Notification Settings</ion-button>
+    </div>
+  
+    <div class="divider"></div>
+
+    <div id="account-btn-logout">
+      <ion-button expand="full" (click)="logOut()">Log Out</ion-button>
+    </div>
+
+    <div class="divider"></div>
+  
+    <div class="account-report">
+      <p (click)="onClickReportBtn(0)">Report Abuse</p>
+    </div>
+  
+    <div class="account-report">
+      <p (click)="onClickReportBtn(1)">Report User</p>
+    </div>
+
+    <div class="account-report">
+      <p (click)="onClickReportBtn(2)">Suggestions?</p>
+    </div>
+  </ng-container>
+  <ng-template #otheruser>
+    <div id="account-btn-send-message">
+      <ion-button expand="full" (click)="viewSendMessagePage()">Send Message</ion-button>
+    </div>
+
+    <div class="divider"></div>
+
+    <div id="account-view-profile-offers">
+      <ion-grid>
+        <ion-row nowrap>
+          
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ng-template>
+</ion-content>

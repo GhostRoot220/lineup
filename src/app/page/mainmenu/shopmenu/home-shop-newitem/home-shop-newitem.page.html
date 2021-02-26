@@ -1,0 +1,46 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="navback" (click)="closeNewItemPage()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Create Offer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-input type="text" placeholder="Title" [(ngModel)]="offerTitle"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="text" placeholder="Description" [(ngModel)]="boardDescription"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>$</ion-label>
+    <ion-input type="number" placeholder="Price" [(ngModel)]="boardPrice"></ion-input>
+  </ion-item>
+
+  <div id="home-shopnewitem-managephoto-controllers">
+    <p>Photos</p>
+  </div>
+
+  <ion-grid>
+    <ion-row nowrap id="home-shopnewitem-imgrow">
+      <ion-col *ngFor="let itemImg of tmpItemImgs; let i = index;" size="4">
+        <div class="home-shopnewitem-emptyimg-container" (click)="getFile(i)">
+          <div class="home-shopnewitem-emptyimg">
+            <img [src]="itemImg == ''?'assets/imgs/img-plus.svg': itemImg" [class]="itemImg==''?'home-shopnewitem-noimg':'home-shopnewitem-itemimg'" />
+            <p *ngIf="itemImg==''">Upload Image</p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div>
+    <ion-button expand="full" (click)="addNewItem()">Submit</ion-button>
+  </div>
+</ion-content>
